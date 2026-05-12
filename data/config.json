@@ -1,0 +1,32 @@
+{
+  "scoring": {
+    "maxDimensionValue": 10,
+    "minDimensionValue": 0,
+    "levelThresholds": {
+      "L": [0, 3],
+      "M": [4, 7],
+      "H": [8, 10]
+    }
+  },
+  "cultivation": {
+    "stages": [
+      { "min": 0, "max": 5, "name": "练气期", "desc": "初入修道，引气入体，感知天地灵气" },
+      { "min": 6, "max": 10, "name": "筑基期", "desc": "筑就道基，脱胎换骨，初窥门径" },
+      { "min": 11, "max": 15, "name": "金丹期", "desc": "凝丹成金，寿命大增，可御剑飞行" },
+      { "min": 16, "max": 20, "name": "元婴期", "desc": "元婴出窍，神识万里，一方巨头" },
+      { "min": 21, "max": 25, "name": "化神期", "desc": "化神合道，参悟本源，半步飞升" },
+      { "min": 26, "max": 30, "name": "渡劫期", "desc": "天劫将至，命数将定，真相即将揭晓" }
+    ]
+  },
+  "specialCheck": {
+    "extremeCount": 5,
+    "extremeThreshold": 8,
+    "extremeMinThreshold": -4
+  },
+  "display": {
+    "title": "NBTI 人格测试",
+    "subtitle": "修仙之路千万条，你走的是哪一条？",
+    "author": "基于玄幻世界人格测试引擎",
+    "funNote": "本测试仅供娱乐。修仙之路千万条，测出什么都是缘法，切勿当真。"
+  }
+}

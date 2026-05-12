@@ -1,0 +1,334 @@
+{
+  "main": [
+    {
+      "id": "Q01",
+      "module": "处世之道",
+      "text": "你初入修行世界，发现一座上古遗迹中有一柄绝世道剑，但外围盘踞着数头实力远超于你的妖兽。你会？",
+      "options": [
+        { "label": "A", "text": "富贵险中求！趁妖兽换防瞬间潜入，搏一搏机缘！", "primary": "D01", "secondary": "D08", "suppress": "D06" },
+        { "label": "B", "text": "花至少三天观察它们的习性，设计完美路线再行动。", "primary": "D06", "secondary": "D03", "suppress": "D01" },
+        { "label": "C", "text": "剑虽好，命更重要，我另寻他处。", "primary": "D08", "secondary": "D06", "suppress": "D01" },
+        { "label": "D", "text": "放出消息引来其他修士，我浑水摸鱼。", "primary": "D06", "secondary": "D03", "suppress": "D02" }
+      ]
+    },
+    {
+      "id": "Q02",
+      "module": "处世之道",
+      "text": "你发现同门师弟暗修魔功，此功法虽歹毒但威力惊人。你会？",
+      "options": [
+        { "label": "A", "text": "铁面举报，宗门规矩不可废。", "primary": "D02", "secondary": "D11", "suppress": "D09" },
+        { "label": "B", "text": "私下找他谈话，给他一次改过自新的机会。", "primary": "D03", "secondary": "D09", "suppress": "D11" },
+        { "label": "C", "text": "与我无关，各人有各人的缘法。", "primary": "D14", "secondary": "D10", "suppress": "D02" },
+        { "label": "D", "text": "以此要挟他，让他为我所用。", "primary": "D03", "secondary": "D12", "suppress": "D02" }
+      ]
+    },
+    {
+      "id": "Q03",
+      "module": "处世之道",
+      "text": "一名后辈诚心向你请教修行之道，你如何回应？",
+      "options": [
+        { "label": "A", "text": "倾囊相授，修行之路需要前人提灯。", "primary": "D04", "secondary": "D09", "suppress": "D07" },
+        { "label": "B", "text": "先观察其人品资质，看人下菜碟。", "primary": "D03", "secondary": "D06", "suppress": "D04" },
+        { "label": "C", "text": "指点几句即可，修行终究要靠自己悟。", "primary": "D07", "secondary": "D14", "suppress": "D09" },
+        { "label": "D", "text": "可以教，但我收费。等价交换，天经地义。", "primary": "D12", "secondary": "D13", "suppress": "D04" }
+      ]
+    },
+    {
+      "id": "Q04",
+      "module": "处世之道",
+      "text": "市井之中有人当众讥讽你，周围人都在看热闹。你会？",
+      "options": [
+        { "label": "A", "text": "直接出手教训，让他知道什么叫祸从口出。", "primary": "D01", "secondary": "D11", "suppress": "D04" },
+        { "label": "B", "text": "一笑而过，与蝼蚁计较有失身份。", "primary": "D04", "secondary": "D14", "suppress": "D11" },
+        { "label": "C", "text": "下生死擂，让他用命为他的嘴付出代价。", "primary": "D11", "secondary": "D01", "suppress": "D10" },
+        { "label": "D", "text": "记下他的脸，来日方长，暗中有他好受的。", "primary": "D06", "secondary": "D11", "suppress": "D02" }
+      ]
+    },
+    {
+      "id": "Q05",
+      "module": "处世之道",
+      "text": "宗门内斗愈演愈烈，两派长老拉你站队，你如何处理？",
+      "options": [
+        { "label": "A", "text": "以力统合，不服者打到服为止！", "primary": "D01", "secondary": "D04", "suppress": "D06" },
+        { "label": "B", "text": "暗中斡旋，谁也不得罪，坐收渔利。", "primary": "D06", "secondary": "D03", "suppress": "D01" },
+        { "label": "C", "text": "两不相帮，独自脱离这是非之地。", "primary": "D07", "secondary": null, "suppress": "D08", "suppress2": "D09" },
+        { "label": "D", "text": "趁乱夺利，浑水摸鱼才是聪明人的选择。", "primary": "D12", "secondary": "D03", "suppress": "D02" }
+      ]
+    },
+    {
+      "id": "Q06",
+      "module": "处世之道",
+      "text": "你偶然得到一部上古邪功，修炼可暴涨修为，但每次突破需以活人精血为引。你会？",
+      "options": [
+        { "label": "A", "text": "此等伤天害理之物，当众焚毁！", "primary": "D10", "secondary": "D02", "suppress": "D13" },
+        { "label": "B", "text": "先收着，研究是否有替代之法。", "primary": "D06", "secondary": "D10", "suppress": "D08" },
+        { "label": "C", "text": "练了！力量本身没有善恶，重要的是用的人。", "primary": "D13", "secondary": "D12", "suppress": "D10" },
+        { "label": "D", "text": "杀恶人取血来练，以恶制恶也算是替天行道。", "primary": "D03", "secondary": "D13", "suppress": "D02" }
+      ]
+    },
+    {
+      "id": "Q07",
+      "module": "处世之道",
+      "text": "绝境之中，你们一行人在一处遗迹发现了一个灵宝——但只够一个人脱困。你会？",
+      "options": [
+        { "label": "A", "text": "让给伙伴，我断后。", "primary": "D09", "secondary": "D01", "suppress": "D07" },
+        { "label": "B", "text": "抽签决定，听天由命。", "primary": "D14", "secondary": null, "suppress": "D07", "suppress2": "D01" },
+        { "label": "C", "text": "我先走，活着才有未来。", "primary": "D07", "secondary": "D12", "suppress": "D09" },
+        { "label": "D", "text": "同生共死，一起想办法破局！", "primary": "D05", "secondary": "D01", "suppress": "D08" }
+      ]
+    },
+    {
+      "id": "Q08",
+      "module": "处世之道",
+      "text": "一位神秘强者看中你的资质，想招你为徒，但你隐约觉得他目的不纯。你会？",
+      "options": [
+        { "label": "A", "text": "断然拒绝，宁缺毋滥。", "primary": "D02", "secondary": "D07", "suppress": "D06" },
+        { "label": "B", "text": "假意答应，暗中调查他的真实目的。", "primary": "D06", "secondary": "D03", "suppress": "D08" },
+        { "label": "C", "text": "问清楚代价和条件，如果值得就接。", "primary": "D08", "secondary": "D10", "suppress": "D02" },
+        { "label": "D", "text": "欣然接受，这是天大的机缘！", "primary": "D12", "secondary": "D08", "suppress": "D01" }
+      ]
+    },
+    {
+      "id": "Q09",
+      "module": "成长之路",
+      "text": "你的修为被人设计废掉，曾经仰慕你的人如今当面嘲讽你。你会？",
+      "options": [
+        { "label": "A", "text": "今日之耻，来日必百倍奉还！", "primary": "D05", "secondary": "D11", "suppress": "D08" },
+        { "label": "B", "text": "平静地从头再来，这笔账我记着。", "primary": "D05", "secondary": "D14", "suppress": "D11" },
+        { "label": "C", "text": "隐姓埋名，从此不问世事。", "primary": "D07", "secondary": null, "suppress": "D01", "suppress2": "D11" },
+        { "label": "D", "text": "赌一把禁术，搏一线生机。", "primary": "D08", "secondary": "D05", "suppress": "D06" }
+      ]
+    },
+    {
+      "id": "Q10",
+      "module": "成长之路",
+      "text": "你得到一张上古丹方，据说可突破瓶颈，但材料极其珍稀且炼制成功概率不足三成。你会？",
+      "options": [
+        { "label": "A", "text": "立刻开炉炼丹，三分把握足够我拼一把！", "primary": "D08", "secondary": "D01", "suppress": "D06" },
+        { "label": "B", "text": "做好万全准备，备齐所有辅助材料再动手。", "primary": "D06", "secondary": "D03", "suppress": "D08" },
+        { "label": "C", "text": "卖了换资源，落袋为安。", "primary": "D07", "secondary": null, "suppress": "D12", "suppress2": "D08" },
+        { "label": "D", "text": "拉上几位信得过的道友一起分担风险。", "primary": "D03", "secondary": "D10", "suppress": "D07" }
+      ]
+    },
+    {
+      "id": "Q11",
+      "module": "成长之路",
+      "text": "遭遇强敌，三招之内你便落败。面对绝对的实力差距，你会？",
+      "options": [
+        { "label": "A", "text": "战死不退，修道之人岂可丢了气势！", "primary": "D01", "secondary": "D05", "suppress": "D06" },
+        { "label": "B", "text": "果断撤退，留得青山在不怕没柴烧。", "primary": "D06", "secondary": "D01", "suppress": "D11" },
+        { "label": "C", "text": "虚与委蛇，示敌以弱，暗中寻找他的弱点。", "primary": "D03", "secondary": "D06", "suppress": "D01" },
+        { "label": "D", "text": "呼唤同伴，一起上！", "primary": "D09", "secondary": "D06", "suppress": "D07" }
+      ]
+    },
+    {
+      "id": "Q12",
+      "module": "成长之路",
+      "text": "你被困在一处荒芜秘境中，与世隔绝至少要三年才能找到出口。你会如何度过？",
+      "options": [
+        { "label": "A", "text": "日日苦修，把这绝境变成闭关福地。", "primary": "D05", "secondary": "D13", "suppress": "D12" },
+        { "label": "B", "text": "研究秘境构造，寻找规则漏洞提前脱困。", "primary": "D06", "secondary": "D14", "suppress": "D05" },
+        { "label": "C", "text": "随遇而安，享受这段难得的清净时光。", "primary": "D12", "secondary": "D15", "suppress": "D05" },
+        { "label": "D", "text": "拼命尝试各种方法，不放过任何一个机会。", "primary": "D08", "secondary": "D05", "suppress": "D06" }
+      ]
+    },
+    {
+      "id": "Q13",
+      "module": "成长之路",
+      "text": "你的修为遇到了生死瓶颈——突破则有可能飞升，失败则身死道消。你会？",
+      "options": [
+        { "label": "A", "text": "强行突破，修道就是与天争命！", "primary": "D08", "secondary": "D05", "suppress": "D15" },
+        { "label": "B", "text": "暂缓突破，再积累百年打好根基。", "primary": "D06", "secondary": "D03", "suppress": "D08" },
+        { "label": "C", "text": "寻找外物辅助，增加突破成功率。", "primary": "D07", "secondary": "D06", "suppress": "D08" },
+        { "label": "D", "text": "不破了，维持现状也挺好，何必冒死。", "primary": "D14", "secondary": "D13", "suppress": "D12" }
+      ]
+    },
+    {
+      "id": "Q14",
+      "module": "成长之路",
+      "text": "修行资源有限，你更倾向于哪种获取方式？",
+      "options": [
+        { "label": "A", "text": "独行苦修，靠自己的实力去秘境搏杀。", "primary": "D07", "secondary": "D05", "suppress": "D04" },
+        { "label": "B", "text": "广交人脉，建立资源共享圈子。", "primary": "D04", "secondary": "D09", "suppress": "D07" },
+        { "label": "C", "text": "投靠大宗门，大树底下好乘凉。", "primary": "D09", "secondary": null, "suppress": "D07", "suppress2": "D01" },
+        { "label": "D", "text": "灵活应变，什么来钱快就做什么。", "primary": "D14", "secondary": "D06", "suppress": "D02" }
+      ]
+    },
+    {
+      "id": "Q15",
+      "module": "成长之路",
+      "text": "你得到一件珍稀宝物，消息走漏，各方势力都在觊觎。你会？",
+      "options": [
+        { "label": "A", "text": "亮出来震慑四方，我看谁敢来抢！", "primary": "D01", "secondary": "D04", "suppress": "D06" },
+        { "label": "B", "text": "深藏不露，装作什么都没发生。", "primary": "D06", "secondary": "D03", "suppress": "D01" },
+        { "label": "C", "text": "托付给信得过的朋友保管。", "primary": "D09", "secondary": null, "suppress": "D07", "suppress2": "D08" },
+        { "label": "D", "text": "布下禁制陷阱，等来抢的人自投罗网。", "primary": "D11", "secondary": "D01", "suppress": "D04" }
+      ]
+    },
+    {
+      "id": "Q16",
+      "module": "成长之路",
+      "text": "你身中无解诅咒，只剩三年寿命。你会怎么度过最后的时光？",
+      "options": [
+        { "label": "A", "text": "在死之前拉所有仇人垫背！", "primary": "D11", "secondary": "D01", "suppress": "D06" },
+        { "label": "B", "text": "全力寻找解咒之法，不信命！", "primary": "D05", "secondary": "D08", "suppress": "D15" },
+        { "label": "C", "text": "完成未了的心愿，不留遗憾地离开。", "primary": "D15", "secondary": "D12", "suppress": "D05" },
+        { "label": "D", "text": "我连天都要逆，区区诅咒算什么东西！", "primary": "D14", "secondary": "D05", "suppress": "D11" }
+      ]
+    },
+    {
+      "id": "Q17",
+      "module": "信念之择",
+      "text": "你的挚爱被邪修炼为阵眼。毁阵则她死苍生可活，不毁阵则她活苍生灭。你会？",
+      "options": [
+        { "label": "A", "text": "毁阵救苍生，她若在天有灵也会理解我。", "primary": "D10", "secondary": "D02", "suppress": "D09" },
+        { "label": "B", "text": "绝不毁阵！天下苍生与我何干？", "primary": "D09", "secondary": "D12", "suppress": "D10" },
+        { "label": "C", "text": "一定有第三条路！我要找到两全之法。", "primary": "D05", "secondary": "D06", "suppress": "D08" },
+        { "label": "D", "text": "无法选择，我拒绝面对这个选项。", "primary": "D14", "secondary": null, "suppress": "D05", "suppress2": "D10" }
+      ]
+    },
+    {
+      "id": "Q18",
+      "module": "信念之择",
+      "text": "路遇弱者被欺辱，出手相助会耽误你的一场重大机缘。你会？",
+      "options": [
+        { "label": "A", "text": "停步出手，修道之人岂能见死不救！", "primary": "D10", "secondary": "D09", "suppress": "D12" },
+        { "label": "B", "text": "继续前行，各有各的命。", "primary": "D12", "secondary": "D07", "suppress": "D10" },
+        { "label": "C", "text": "看情况而定，顺手能帮就帮一下。", "primary": "D06", "secondary": "D10", "suppress": "D01" },
+        { "label": "D", "text": "暗中出手相助，不暴露身份即可。", "primary": "D03", "secondary": "D09", "suppress": "D14" }
+      ]
+    },
+    {
+      "id": "Q19",
+      "module": "信念之择",
+      "text": "昔日好友背叛你，害你险些丧命。多年后他落魄地出现在你面前。你会？",
+      "options": [
+        { "label": "A", "text": "杀之后快，背叛者只有死路一条！", "primary": "D11", "secondary": "D02", "suppress": "D04" },
+        { "label": "B", "text": "废其修为，从此两清。", "primary": "D02", "secondary": "D04", "suppress": "D11" },
+        { "label": "C", "text": "随风而去吧，我早就不在意了。", "primary": "D04", "secondary": "D14", "suppress": "D11" },
+        { "label": "D", "text": "留着他，让他用余生赎罪为我所用。", "primary": "D03", "secondary": "D12", "suppress": "D02" }
+      ]
+    },
+    {
+      "id": "Q20",
+      "module": "信念之择",
+      "text": "修行的终极意义，你内心深处最认同哪一句？",
+      "options": [
+        { "label": "A", "text": "变强是为了守护珍视的一切。", "primary": "D13", "secondary": "D09", "suppress": "D12" },
+        { "label": "B", "text": "追求永生不朽，看尽沧海桑田。", "primary": "D15", "secondary": "D12", "suppress": "D05" },
+        { "label": "C", "text": "不求长生，但求轰轰烈烈燃烧过。", "primary": "D08", "secondary": "D14", "suppress": "D15" },
+        { "label": "D", "text": "小孩子才做选择，守护、长生、痛快我全都要！", "primary": "D12", "secondary": "D04", "suppress": "D02" }
+      ]
+    },
+    {
+      "id": "Q21",
+      "module": "信念之择",
+      "text": "你最信任的挚友走火入魔，见人就杀。师门派你清理门户。你会？",
+      "options": [
+        { "label": "A", "text": "含泪斩杀，我不能让更多无辜的人受害。", "primary": "D02", "secondary": "D10", "suppress": "D09" },
+        { "label": "B", "text": "关押起来，想尽一切办法为他寻解。", "primary": "D09", "secondary": "D05", "suppress": "D02" },
+        { "label": "C", "text": "放他走，他是我兄弟，我下不了手。", "primary": "D09", "secondary": "D14", "suppress": "D02" },
+        { "label": "D", "text": "找人一起处理，这件事不该我一人扛。", "primary": "D07", "secondary": "D06", "suppress": "D02" }
+      ]
+    },
+    {
+      "id": "Q22",
+      "module": "信念之择",
+      "text": "三位倾心于你的人，你会选择谁作为道侣？",
+      "options": [
+        { "label": "A", "text": "选择背景显赫、能助我修行的那个。", "primary": "D12", "secondary": "D07", "suppress": "D09" },
+        { "label": "B", "text": "选择青梅竹马、知根知底的那个。", "primary": "D09", "secondary": "D10", "suppress": "D12" },
+        { "label": "C", "text": "选择灵魂契合、能与我仗剑天涯的那个。", "primary": "D14", "secondary": "D07", "suppress": "D09" },
+        { "label": "D", "text": "为什么要选？我全都要。", "primary": "D12", "secondary": "D13", "suppress": "D02" }
+      ]
+    },
+    {
+      "id": "Q23",
+      "module": "信念之择",
+      "text": "一个曾对你有恩的人需要你帮助，但代价是放弃一次极其珍稀的修行机缘。你会？",
+      "options": [
+        { "label": "A", "text": "放弃机缘，有恩必报才是修道之人的本分。", "primary": "D09", "secondary": "D02", "suppress": "D12" },
+        { "label": "B", "text": "先去取机缘，回来再帮他，两不耽误。", "primary": "D06", "secondary": "D12", "suppress": "D09" },
+        { "label": "C", "text": "力所能及地帮，但不影响我取机缘的行程。", "primary": "D08", "secondary": "D10", "suppress": "D12" },
+        { "label": "D", "text": "先顾好自己吧，人情以后有机会再还。", "primary": "D12", "secondary": "D07", "suppress": "D09" }
+      ]
+    },
+    {
+      "id": "Q24",
+      "module": "信念之择",
+      "text": "一位圣者为了所谓的「大义」屠灭百万生灵。你如何评价？",
+      "options": [
+        { "label": "A", "text": "不过是借口罢了！屠夫就是屠夫。", "primary": "D10", "secondary": "D02", "suppress": "D04" },
+        { "label": "B", "text": "结果或许是好的，但手段我不敢苟同。", "primary": "D14", "secondary": "D06", "suppress": "D10" },
+        { "label": "C", "text": "敬佩他的魄力，只是道不同不相为谋。", "primary": "D03", "secondary": "D13", "suppress": "D10" },
+        { "label": "D", "text": "换做是我，我也会这么做。", "primary": "D12", "secondary": "D11", "suppress": "D10" }
+      ]
+    },
+    {
+      "id": "Q25",
+      "module": "终极拷问",
+      "text": "你被告知，成为世界唯一主宰的代价是必须亲手毁灭所有对你有恩的人和势力。你会？",
+      "options": [
+        { "label": "A", "text": "拒绝！若主宰之路要踩着恩人的尸骨，我宁可不要。", "primary": "D13", "secondary": "D09", "suppress": "D12" },
+        { "label": "B", "text": "一定有折衷方案，我不信只有这一条路。", "primary": "D06", "secondary": "D03", "suppress": "D13" },
+        { "label": "C", "text": "仔细想想这笔交易是否划算。", "primary": "D12", "secondary": "D06", "suppress": "D02" },
+        { "label": "D", "text": "我把他们封印在另一界存活，不算我毁约吧？", "primary": "D03", "secondary": "D13", "suppress": "D10" }
+      ]
+    },
+    {
+      "id": "Q26",
+      "module": "终极拷问",
+      "text": "你发现整个世界不过是一位上古大能的幻术游戏，你经历的一切都是假的。你会？",
+      "options": [
+        { "label": "A", "text": "继续过我的日子，假又如何？我的感受是真的就够了。", "primary": "D14", "secondary": null, "suppress": "D15", "suppress2": "D12" },
+        { "label": "B", "text": "找到这位大能，问他为什么要这样做。", "primary": "D06", "secondary": "D05", "suppress": "D14" },
+        { "label": "C", "text": "那我就在这幻境中自己创造一个真正的世界！", "primary": "D15", "secondary": "D05", "suppress": "D14" },
+        { "label": "D", "text": "取代这位大能，让我来做这个世界的执棋者。", "primary": "D12", "secondary": "D13", "suppress": "D14" }
+      ]
+    },
+    {
+      "id": "Q27",
+      "module": "终极拷问",
+      "text": "你看到命运终点——一场必死的大战。你已知道结果，还会去吗？",
+      "options": [
+        { "label": "A", "text": "预言又如何？我偏不信，该怎么活就怎么活。", "primary": "D14", "secondary": "D05", "suppress": "D06" },
+        { "label": "B", "text": "逆天改命！既然看到了结局，那我就去改写它！", "primary": "D05", "secondary": "D08", "suppress": "D15" },
+        { "label": "C", "text": "趁最后的时间去完成所有心愿，不留遗憾。", "primary": "D15", "secondary": "D12", "suppress": "D05" },
+        { "label": "D", "text": "为值得的人和事而死，我接受这个结局。", "primary": "D09", "secondary": "D10", "suppress": "D05" }
+      ]
+    },
+    {
+      "id": "Q28",
+      "module": "终极拷问",
+      "text": "你曾被整个世界背叛过。如今世界面临灭顶之灾，需要你去拯救。你如何选择？",
+      "options": [
+        { "label": "A", "text": "为那些需要保护的无辜者出手，但不是为了这个世界。", "primary": "D10", "secondary": "D04", "suppress": "D11" },
+        { "label": "B", "text": "让这个世界自生自灭吧，这是它欠我的。", "primary": "D11", "secondary": null, "suppress": "D10", "suppress2": "D04" },
+        { "label": "C", "text": "可以救，但我要谈条件。", "primary": "D12", "secondary": "D06", "suppress": "D10" },
+        { "label": "D", "text": "我不为世界，我为自己内心的秩序而战。", "primary": "D14", "secondary": "D13", "suppress": "D11" }
+      ]
+    },
+    {
+      "id": "Q29",
+      "module": "终极拷问",
+      "text": "若有来生，你想成为一个怎样的人？",
+      "options": [
+        { "label": "A", "text": "一个善良的普通人，平凡安稳过一生。", "primary": "D15", "secondary": null, "suppress": "D12", "suppress2": "D05" },
+        { "label": "B", "text": "还是这样的自己，再来一次我依然这么活。", "primary": "D14", "secondary": "D05", "suppress": "D08" },
+        { "label": "C", "text": "比今生更强，弥补所有的遗憾。", "primary": "D12", "secondary": "D05", "suppress": "D15" },
+        { "label": "D", "text": "逍遥天地间，不沾因果不为情困。", "primary": "D07", "secondary": "D14", "suppress": "D02" }
+      ]
+    },
+    {
+      "id": "Q30",
+      "module": "终极拷问",
+      "text": "若天地不容你存在，所有规则都与你为敌。你会如何回应？",
+      "options": [
+        { "label": "A", "text": "逆天！天要灭我，我便捅破这天！", "primary": "D14", "secondary": "D01", "suppress": "D02" },
+        { "label": "B", "text": "认命了，既然天地不容，那便随风而逝。", "primary": "D15", "secondary": null, "suppress": "D05", "suppress2": "D01" },
+        { "label": "C", "text": "以身为薪，燃灯照后人。我不在了，但我的道永存。", "primary": "D10", "secondary": "D09", "suppress": "D05" },
+        { "label": "D", "text": "它奈我何？我自有我存在的道理，不需要天地认可。", "primary": "D01", "secondary": "D14", "suppress": "D10" }
+      ]
+    }
+  ]
+}

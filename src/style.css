@@ -1,0 +1,511 @@
+/* ========== NBTI 水墨玄幻风主题 ========== */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Ma+Shan+Zheng&display=swap');
+
+:root {
+  --ink-black: #1a1a2e;
+  --ink-gold: #c9a84c;
+  --ink-red: #a83232;
+  --ink-gray: #8b8b8b;
+  --ink-light: #5a5a5a;
+  --bg-paper: #f5f0e8;
+  --bg-dark: #0f0f1a;
+  --card-bg: #ffffff;
+  --text: #1a1a2e;
+  --text-secondary: #5a5a5a;
+  --accent: #c9a84c;
+  --accent-light: #f5f0e8;
+  --accent-hover: #b89430;
+  --border: #e0d8c8;
+  --radius: 12px;
+  --shadow: 0 4px 20px rgba(26, 26, 46, 0.08);
+  --font: "PingFang SC", "Microsoft YaHei", "Noto Serif SC", serif;
+  --font-title: "Ma Shan Zheng", "Noto Serif SC", serif;
+  --max-width: 640px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg-paper);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100dvh;
+}
+
+#app {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 16px;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  display: none;
+  width: 100%;
+}
+
+.page.active {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+/* ========== Intro ========== */
+.intro-card {
+  text-align: center;
+  padding: 56px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-card::before {
+  content: '✦';
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  color: var(--ink-gold);
+  opacity: 0.5;
+}
+
+.intro-title {
+  font-family: var(--font-title);
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  color: var(--ink-black);
+  letter-spacing: 0.1em;
+}
+
+.intro-subtitle {
+  font-size: 1rem;
+  color: var(--ink-gray);
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+.intro-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--ink-gold);
+  margin: 0 auto 32px;
+  opacity: 0.5;
+}
+
+.intro-credit {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: var(--ink-gray);
+}
+
+/* ========== Buttons ========== */
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  font-family: var(--font);
+}
+
+.btn-primary {
+  background: var(--ink-black);
+  color: var(--ink-gold);
+  padding: 14px 48px;
+  letter-spacing: 0.08em;
+}
+
+.btn-primary:hover {
+  background: #2a2a44;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 26, 46, 0.2);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: var(--accent-light);
+  color: var(--ink-black);
+  padding: 12px 36px;
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--border);
+}
+
+.btn-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  background: var(--card-bg);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+.btn-option:hover {
+  border-color: var(--ink-gold);
+  background: var(--accent-light);
+}
+
+.btn-option:active {
+  background: var(--ink-black);
+  color: var(--ink-gold);
+  border-color: var(--ink-black);
+}
+
+/* ========== Quiz ========== */
+.quiz-card {
+  padding: 24px 20px;
+}
+
+.progress-bar {
+  height: 4px;
+  background: var(--accent-light);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--ink-gold), var(--ink-red));
+  border-radius: 2px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+  color: var(--ink-gray);
+}
+
+.cultivation-stage {
+  color: var(--ink-gold);
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+.question-area {
+  margin-bottom: 24px;
+}
+
+.question-module {
+  font-size: 0.75rem;
+  color: var(--ink-gray);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.question-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+/* ========== Result ========== */
+.result-card {
+  text-align: center;
+  padding: 32px 20px;
+}
+
+.result-kicker {
+  font-size: 0.85rem;
+  color: var(--ink-gray);
+  margin-bottom: 6px;
+  letter-spacing: 0.1em;
+}
+
+.result-name {
+  font-family: var(--font-title);
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: var(--ink-black);
+  margin-bottom: 4px;
+  letter-spacing: 0.05em;
+}
+
+.result-source {
+  font-size: 0.85rem;
+  color: var(--ink-gray);
+  margin-bottom: 12px;
+}
+
+.result-badge {
+  display: inline-block;
+  background: var(--accent-light);
+  color: var(--ink-gray);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+/* 关键词 */
+.result-keywords {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.keyword-tag {
+  background: var(--accent-light);
+  color: var(--ink-light);
+  padding: 3px 12px;
+  border-radius: 12px;
+  font-size: 0.78rem;
+  border: 1px solid var(--border);
+}
+
+/* 语录 */
+.result-quote {
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--ink-red);
+  margin-bottom: 4px;
+  line-height: 1.6;
+}
+
+.result-quote-context {
+  font-size: 0.8rem;
+  color: var(--ink-gray);
+  margin-bottom: 16px;
+}
+
+/* 简介 */
+.result-bio {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-align: left;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background: var(--accent-light);
+  border-radius: 8px;
+  border-left: 3px solid var(--ink-gold);
+}
+
+/* Tags */
+.result-tags {
+  font-size: 0.8rem;
+  color: var(--ink-gold);
+  font-family: monospace;
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+}
+
+/* Special badge */
+.result-special-badge {
+  font-size: 0.78rem;
+  color: var(--ink-red);
+  background: #fef0f0;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.result-secondary {
+  background: var(--accent-light);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.secondary-info {
+  font-size: 0.9rem;
+  color: var(--ink-light);
+  font-weight: 600;
+}
+
+/* ========== Section Title ========== */
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 28px 0 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+/* ========== Radar Chart ========== */
+#radar-chart {
+  display: block;
+  margin: 0 auto 24px;
+  max-width: 100%;
+}
+
+/* ========== Dimensions Detail ========== */
+.dimensions-detail {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.dim-row {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.dim-row:last-child {
+  border-bottom: none;
+}
+
+.dim-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.dim-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.dim-level {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.level-low {
+  background: #f5f0e8;
+  color: var(--ink-gray);
+}
+
+.level-mid {
+  background: #f5f0e8;
+  color: var(--ink-gold);
+}
+
+.level-high {
+  background: #fef0f0;
+  color: var(--ink-red);
+}
+
+.dim-desc {
+  font-size: 0.8rem;
+  color: var(--ink-gray);
+  line-height: 1.5;
+}
+
+/* ========== Top List ========== */
+.top-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.top-item:last-child {
+  border-bottom: none;
+}
+
+.top-rank {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ink-gray);
+  min-width: 28px;
+}
+
+.top-code {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-black);
+  flex: 1;
+  text-align: left;
+}
+
+.top-sim {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink-gold);
+}
+
+.top-dist {
+  font-size: 0.75rem;
+  color: var(--ink-gray);
+}
+
+/* ========== Disclaimer ========== */
+.disclaimer {
+  margin-top: 24px;
+  padding: 16px;
+  background: var(--accent-light);
+  border-radius: 8px;
+  font-size: 0.78rem;
+  color: var(--ink-gray);
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ========== Result Actions ========== */
+.result-actions {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ========== Mobile ========== */
+@media (max-width: 480px) {
+  .intro-title {
+    font-size: 2rem;
+  }
+
+  .result-name {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    padding: 24px 16px;
+  }
+}
