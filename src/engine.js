@@ -1,5 +1,3 @@
-import { checkSpecialPersonality } from './special-check.js'
-
 const DIM_COUNT = 15
 const DIM_KEYS = ['D01','D02','D03','D04','D05','D06','D07','D08','D09','D10','D11','D12','D13','D14','D15']
 
@@ -128,11 +126,11 @@ function euclideanDistance(userVec, typeVec) {
 }
 
 /**
- * 匹配所有类型，排序，应用特殊覆盖
+ * 匹配所有类型并排序
  * 以余弦相似度为主排序（关注维度倾向模式），
  * level 命中率为辅。
  */
-export function determineResult(userVector, rawScores, userLevels, standardTypes, specialTypes, config) {
+export function determineResult(userVector, userLevels, standardTypes) {
   const rankings = standardTypes.map((type) => {
     const cosim = cosineSimilarity(userVector, type.vector)
     const sim = Math.max(0, Math.round((cosim + 1) / 2 * 100))
@@ -146,23 +144,9 @@ export function determineResult(userVector, rawScores, userLevels, standardTypes
 
   rankings.sort((a, b) => b.cosim - a.cosim || b.exact - a.exact)
 
-  const best = rankings[0]
-
-  // 特殊人格检测
-  const specialResult = checkSpecialPersonality(rawScores, userVector, userLevels, specialTypes, config)
-  if (specialResult) {
-    return {
-      primary: { ...specialResult, similarity: best.similarity, exact: best.exact },
-      secondary: best,
-      rankings,
-      mode: 'special'
-    }
-  }
-
   return {
-    primary: best,
+    primary: rankings[0],
     secondary: rankings[1] || null,
-    rankings,
-    mode: 'normal'
+    rankings
   }
 }

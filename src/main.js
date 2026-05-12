@@ -26,7 +26,7 @@ function onQuizComplete(rawAnswers) {
   const ranges = computeScoreRanges(questionsData.main)
   const normalized = normalizeScores(rawScores, ranges)
   const levels = scoresToLevels(normalized, configData.scoring.levelThresholds)
-  const result = determineResult(normalized, rawScores, levels, typesData.standard, typesData.special, configData)
+  const result = determineResult(normalized, levels, typesData.standard)
   renderResult(result, normalized, levels, dimensionsData.order, dimensionsData.definitions, configData, typesData.standard)
   showPage('result')
 }

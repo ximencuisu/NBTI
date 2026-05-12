@@ -6,21 +6,16 @@ const LEVEL_CLASS = { L: 'level-low', M: 'level-mid', H: 'level-high' }
 const DIM_KEYS = ['D01','D02','D03','D04','D05','D06','D07','D08','D09','D10','D11','D12','D13','D14','D15']
 
 export function renderResult(result, userVector, userLevels, dimOrder, dimDefs, config, standardTypes) {
-  const { primary, secondary, rankings, mode } = result
+  const { primary, secondary, rankings } = result
 
-  const kicker = document.getElementById('result-kicker')
-  if (mode === 'special') kicker.textContent = '✦ 隐藏人格触发 ✦'
-  else kicker.textContent = '你的主类型'
-
+  document.getElementById('result-kicker').textContent = '你的主类型'
   document.getElementById('result-name').textContent = primary.name
 
   const badge = document.getElementById('result-badge')
   badge.textContent = `契合度 ${primary.similarity}% · 命轮余影 ${secondary?.name || '无'}`
 
-  // 出处
   document.getElementById('result-source').textContent = primary.source || ''
 
-  // 关键词
   const kwEl = document.getElementById('result-keywords')
   kwEl.innerHTML = ''
   if (primary.keywords) {
@@ -32,7 +27,6 @@ export function renderResult(result, userVector, userLevels, dimOrder, dimDefs, 
     })
   }
 
-  // 语录
   const quoteEl = document.getElementById('result-quote')
   const quoteCtxEl = document.getElementById('result-quote-context')
   if (primary.quotes && primary.quotes.length > 0) {
@@ -43,10 +37,8 @@ export function renderResult(result, userVector, userLevels, dimOrder, dimDefs, 
     quoteCtxEl.textContent = ''
   }
 
-  // 简介
   document.getElementById('result-bio').textContent = primary.bio || ''
 
-  // GeminiTags
   const tagsEl = document.getElementById('result-tags')
   if (primary.geminiTags) {
     tagsEl.textContent = primary.geminiTags
@@ -55,18 +47,10 @@ export function renderResult(result, userVector, userLevels, dimOrder, dimDefs, 
     tagsEl.style.display = 'none'
   }
 
-  // 特殊人格标识
-  const specialBadge = document.getElementById('result-special-badge')
-  if (mode === 'special') {
-    specialBadge.textContent = `触发条件：${primary.trigger || '无'}`
-    specialBadge.style.display = ''
-  } else {
-    specialBadge.style.display = 'none'
-  }
+  document.getElementById('result-special-badge').style.display = 'none'
 
-  // 次要匹配
   const secEl = document.getElementById('result-secondary')
-  if (secondary && mode === 'special') {
+  if (secondary) {
     secEl.style.display = ''
     document.getElementById('secondary-info').textContent =
       `命轮余影：${secondary.name} · 契合度 ${secondary.similarity}%`

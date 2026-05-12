@@ -18,11 +18,6 @@
       { "min": 26, "max": 30, "name": "渡劫期", "desc": "天劫将至，命数将定，真相即将揭晓" }
     ]
   },
-  "specialCheck": {
-    "extremeCount": 5,
-    "extremeThreshold": 8,
-    "extremeMinThreshold": -4
-  },
   "display": {
     "title": "NBTI 人格测试",
     "subtitle": "修仙之路千万条，你走的是哪一条？",
