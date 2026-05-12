@@ -102,7 +102,22 @@ function vectorToLevel(v) {
 }
 
 /**
- * 欧氏距离匹配
+ * 余弦相似度（关注维度模式/形状而非绝对值）
+ * 值域 -1~1，越高代表维度倾向越一致
+ */
+function cosineSimilarity(userVec, typeVec) {
+  let dot = 0, normUser = 0, normType = 0
+  for (let i = 0; i < DIM_COUNT; i++) {
+    dot += userVec[i] * typeVec[i]
+    normUser += userVec[i] * userVec[i]
+    normType += typeVec[i] * typeVec[i]
+  }
+  const denom = Math.sqrt(normUser) * Math.sqrt(normType)
+  return denom === 0 ? 0 : dot / denom
+}
+
+/**
+ * 欧氏距离（供展示用）
  */
 function euclideanDistance(userVec, typeVec) {
   let sum = 0
@@ -113,29 +128,23 @@ function euclideanDistance(userVec, typeVec) {
 }
 
 /**
- * 计算相似度百分比（基于欧氏距离）
- * 最大可能距离 sqrt(15 * 100) ≈ 38.73
- */
-function similarityFromDistance(dist) {
-  const maxDist = Math.sqrt(DIM_COUNT * 100)
-  return Math.max(0, Math.round((1 - dist / maxDist) * 100))
-}
-
-/**
  * 匹配所有类型，排序，应用特殊覆盖
+ * 以余弦相似度为主排序（关注维度倾向模式），
+ * level 命中率为辅。
  */
 export function determineResult(userVector, rawScores, userLevels, standardTypes, specialTypes, config) {
   const rankings = standardTypes.map((type) => {
+    const cosim = cosineSimilarity(userVector, type.vector)
+    const sim = Math.max(0, Math.round((cosim + 1) / 2 * 100))
     const dist = euclideanDistance(userVector, type.vector)
-    const sim = similarityFromDistance(dist)
     let exact = 0
     for (let i = 0; i < DIM_COUNT; i++) {
       if (userLevels[i] === vectorToLevel(type.vector[i])) exact++
     }
-    return { ...type, distance: dist, similarity: sim, exact }
+    return { ...type, similarity: sim, distance: dist, cosim, exact }
   })
 
-  rankings.sort((a, b) => b.exact - a.exact || a.distance - b.distance || b.similarity - a.similarity)
+  rankings.sort((a, b) => b.cosim - a.cosim || b.exact - a.exact)
 
   const best = rankings[0]
 
