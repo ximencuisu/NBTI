@@ -37,14 +37,46 @@ export function calcDimensionScores(answers, questions) {
 }
 
 /**
- * 原始分 → 0~10 归一化
- * 理论范围 -30~60，归一化到 0~10
+ * 根据题目数据计算每个维度的理论最小/最大原始分
+ * 用于后续归一化，使各维度在 0~10 间合理分布
  */
-export function normalizeScores(rawScores) {
-  const min = -30
-  const max = 60
-  return rawScores.map(s => {
-    const normalized = ((s - min) / (max - min)) * 10
+export function computeScoreRanges(questions) {
+  const dimMin = {}
+  const dimMax = {}
+  DIM_KEYS.forEach(k => { dimMin[k] = 0; dimMax[k] = 0 })
+
+  questions.forEach(q => {
+    DIM_KEYS.forEach(d => {
+      let bestGain = -Infinity
+      let worstGain = Infinity
+      q.options.forEach(opt => {
+        let gain = 0
+        if (opt.primary === d) gain += 2
+        if (opt.secondary === d) gain += 1
+        if (opt.suppress === d) gain -= 1
+        if (opt.suppress2 === d) gain -= 1
+        if (gain > bestGain) bestGain = gain
+        if (gain < worstGain) worstGain = gain
+      })
+      if (bestGain > 0) dimMax[d] += bestGain
+      if (worstGain < 0) dimMin[d] += worstGain
+    })
+  })
+
+  return { min: dimMin, max: dimMax }
+}
+
+/**
+ * 原始分 → 0~10 归一化（使用按维度计算的理论范围）
+ */
+export function normalizeScores(rawScores, ranges) {
+  return rawScores.map((s, i) => {
+    const dim = DIM_KEYS[i]
+    const min = ranges.min[dim]
+    const max = ranges.max[dim]
+    const span = max - min
+    if (span <= 0) return 5
+    const normalized = ((s - min) / span) * 10
     return Math.max(0, Math.min(10, Math.round(normalized)))
   })
 }
@@ -60,7 +92,14 @@ export function scoresToLevels(normalizedScores, thresholds) {
   })
 }
 
-const LEVEL_NUM = { L: 1, M: 2, H: 3 }
+/**
+ * 将向量值转成等级（与归一化阈值一致）
+ */
+function vectorToLevel(v) {
+  if (v <= 3) return 'L'
+  if (v >= 8) return 'H'
+  return 'M'
+}
 
 /**
  * 欧氏距离匹配
@@ -91,12 +130,12 @@ export function determineResult(userVector, rawScores, userLevels, standardTypes
     const sim = similarityFromDistance(dist)
     let exact = 0
     for (let i = 0; i < DIM_COUNT; i++) {
-      if (LEVEL_NUM[userLevels[i]] === Math.round(type.vector[i] / 3.33)) exact++
+      if (userLevels[i] === vectorToLevel(type.vector[i])) exact++
     }
     return { ...type, distance: dist, similarity: sim, exact }
   })
 
-  rankings.sort((a, b) => a.distance - b.distance || b.exact - a.exact || b.similarity - a.similarity)
+  rankings.sort((a, b) => b.exact - a.exact || a.distance - b.distance || b.similarity - a.similarity)
 
   const best = rankings[0]
 

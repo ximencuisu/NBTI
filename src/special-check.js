@@ -21,13 +21,12 @@ function dimIndex(key) {
 export function checkSpecialPersonality(rawScores, normalizedScores, userLevels, specialTypes, config) {
   const threshold = config.specialCheck?.extremeThreshold ?? 8
 
-  // S01: 天道漏洞·观察者 — 所有维度高度均衡
+  // S01: 天道漏洞·观察者 — 所有维度高度均衡（无明显倾向）
   const mean = normalizedScores.reduce((a, b) => a + b, 0) / normalizedScores.length
   const variance = normalizedScores.reduce((sum, s) => sum + Math.pow(s - mean, 2), 0) / normalizedScores.length
   const stdDev = Math.sqrt(variance)
 
-  const allLow = normalizedScores.every(s => s <= threshold - 2 && s >= 2)
-  if (stdDev < 2.5 && allLow) {
+  if (stdDev < 1.0) {
     const observer = specialTypes.find(t => t.id === 'S01')
     if (observer) return observer
   }
@@ -36,7 +35,7 @@ export function checkSpecialPersonality(rawScores, normalizedScores, userLevels,
   const d10 = rawScores[dimIndex('D10')]  // 善恶观
   const d12 = rawScores[dimIndex('D12')]  // 欲望
   const d13 = rawScores[dimIndex('D13')]  // 力量观
-  if (d10 <= -8 && d12 >= 9 && d13 <= 2) {
+  if (d10 <= -3 && d12 >= 10 && d13 <= 2) {
     const dark = specialTypes.find(t => t.id === 'S02')
     if (dark) return dark
   }
@@ -44,7 +43,7 @@ export function checkSpecialPersonality(rawScores, normalizedScores, userLevels,
   // S03: 坐忘道·虚无 — 自我迷失 + 心性混沌
   const d14 = rawScores[dimIndex('D14')]  // 自我认知
   const d03 = rawScores[dimIndex('D03')]  // 心性
-  if (d14 >= -6 && d14 <= -2 && d03 >= -2 && d03 <= 2) {
+  if (d14 <= 2 && d03 <= 3) {
     const xu = specialTypes.find(t => t.id === 'S03')
     if (xu) return xu
   }
